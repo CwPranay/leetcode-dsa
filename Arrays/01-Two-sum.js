@@ -4,9 +4,7 @@ var twoSum = function(nums, target) {
   {
     let n=target-nums[i]
     if(map.has(n))
-    {
-        return [map.get(n),i]
-    }
+    {return [map.get(n),i]}
     map.set(nums[i],i)
   }
 };
