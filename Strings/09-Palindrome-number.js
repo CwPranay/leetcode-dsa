@@ -1,9 +1,15 @@
-var isPalindrome = function (x) {
+var isPalindrome = function(x) {
+    let reverse = x.toString().split("").reverse().join("")
+    console.log(reverse)
+    if(x==reverse)
+    {
+        return true
+    }
+    else
+    {
+        return false
+    }
 
-    if (x < 0) return false;
-
-    let str = x.toString();
-    let reversed = str.split('').reverse().join('');
-
-    return str === reversed;
 };
+let x =121
+console.log(isPalindrome(x))
