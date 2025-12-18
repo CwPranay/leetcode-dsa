@@ -1,18 +1,18 @@
 var isAnagram = function(s, t) {
-    let freq = {}
-    for ( let ch of s)
+    let map = {}
+    if(s.length!=t.length) return false;
+    for( let ch of s)
     {
-      freq[ch]=(freq[ch] || 0) +1
+        map[ch]=(map[ch] || 0) +1
     }
-    for(let ch of t)
+    for( let ch of s)
     {
-        if(freq[ch])
-        {return true}
-        
-        
+        if(!map[ch]) return false;
+        map[ch]--;
     }
-    
-    return false
+    return true
 };
-let  s = "anagram", t = "naapgram";
+
+let s = "anagram", t = "nagaram"
 console.log(isAnagram(s,t))
+
