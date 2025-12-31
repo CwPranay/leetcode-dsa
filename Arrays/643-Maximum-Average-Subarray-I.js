@@ -1,16 +1,20 @@
 var findMaxAverage = function (nums, k) {
     let windowSum = 0
-    for (let i = 0; i < k; i++) {
-        windowSum += nums[i]
-    }
-    let maxSum = windowSum
-    for( let i=k;i<nums.length;i++)
+    for (  let i = 0;i<k;i++)
     {
-        windowSum = windowSum -nums[i-k] + nums[i]
+        windowSum +=nums[i]
+
+    }
+    let maxSum = windowSum;
+    for ( let i =k;i<nums.length;i++)
+    {
+        windowSum+=nums[i]
+        windowSum-=nums[i-k]
+
         maxSum=Math.max(maxSum,windowSum)
     }
+   
    return maxSum/k
-
 }
 
 let nums = [1,12,-5,-6,50,3], k = 4
